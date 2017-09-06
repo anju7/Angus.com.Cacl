@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3400" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="17A360a" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Album" representedClassName="Album" syncable="YES">
         <attribute name="albumName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="folder" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="seq" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="seq" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photo" inverseName="relationship" inverseEntity="Photo" syncable="YES"/>
+        <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Video" inverseName="relationship" inverseEntity="Video" syncable="YES"/>
     </entity>
     <entity name="Photo" representedClassName="Photo" syncable="YES">
         <attribute name="photoName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="seq" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="seq" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="relationship" inverseEntity="Album" syncable="YES"/>
     </entity>
     <entity name="Video" representedClassName="Video" syncable="YES">
         <attribute name="videoPath" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="relationship1" inverseEntity="Album" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Album" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Photo" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Video" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Album" positionX="-180" positionY="-234" width="144" height="118"/>
+        <element name="Photo" positionX="-252" positionY="-45" width="119" height="88"/>
+        <element name="Video" positionX="-74" positionY="-67" width="128" height="73"/>
     </elements>
 </model>
