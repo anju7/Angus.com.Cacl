@@ -194,7 +194,7 @@
 #pragma mark -- UICollectionViewDelegate
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"選了第%d個影片",indexPath.item);
+    NSLog(@"選了第%ld個影片",(long)indexPath.item);
     
     UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];//用來知道目前有幾個item
@@ -212,8 +212,12 @@
 
 - (void)playVideo
 {
-    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:@"https://r20---sn-u2x76n7y.googlevideo.com/videoplayback?itag=18&expire=1388433103&ipbits=0&ip=110.29.193.142&key=yt5&ratebypass=yes&sver=3&fexp=933208%2C909717%2C924616%2C932295%2C936912%2C936910%2C923305%2C936913%2C907231%2C907240%2C921090%2C3300044%2C3300114%2C3300133%2C3300137%2C3300161%2C3310556%2C3310870&id=o-AEYyTibcxMncxktWs0vM5gfo7QRC9cM8LW_vh0MJNcKW&sparams=id%2Cip%2Cipbits%2Citag%2Cratebypass%2Csource%2Cupn%2Cexpire&upn=_HKOxlsiRxI&source=youtube&signature=382B5436A8C22B815D6DDE58B147AB04CBC47126.350EBFDEDE87477F46AFB900C25E98A4CAB927CB&redirect_counter=1&cms_redirect=yes&ms=nxu&mt=1388408661&mv=m"]];
-    moviePlayer.controlStyle = MPMovieControlModeDefault;
+    /*
+    moviePlayer = [[MPMoviePlayerController Use AVPlayerViewController in AVKit.] initWithContentURL:[NSURL URLWithString:@"https://r20---sn-u2x76n7y.googlevideo.com/videoplayback?itag=18&expire=1388433103&ipbits=0&ip=110.29.193.142&key=yt5&ratebypass=yes&sver=3&fexp=933208%2C909717%2C924616%2C932295%2C936912%2C936910%2C923305%2C936913%2C907231%2C907240%2C921090%2C3300044%2C3300114%2C3300133%2C3300137%2C3300161%2C3310556%2C3310870&id=o-AEYyTibcxMncxktWs0vM5gfo7QRC9cM8LW_vh0MJNcKW&sparams=id%2Cip%2Cipbits%2Citag%2Cratebypass%2Csource%2Cupn%2Cexpire&upn=_HKOxlsiRxI&source=youtube&signature=382B5436A8C22B815D6DDE58B147AB04CBC47126.350EBFDEDE87477F46AFB900C25E98A4CAB927CB&redirect_counter=1&cms_redirect=yes&ms=nxu&mt=1388408661&mv=m"]]
+     */
+    
+    
+    moviePlayer.controlStyle = MPMovieControlStyleDefault;
     
     [moviePlayer play];
     NSLog(@"play video");
